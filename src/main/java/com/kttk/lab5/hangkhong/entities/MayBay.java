@@ -1,0 +1,73 @@
+package com.kttk.lab5.hangkhong.entities;
+
+import javax.persistence.Table;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+
+@Entity
+@Table(name = "maybay")
+public class MayBay {
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "MaMb")
+  private int maMB;
+  @Column(name = "Loai", length = 50)
+  private String loai;
+  @Column(name = "TamBay")
+  private int tamBay;
+
+  @OneToMany(
+    mappedBy = "maybay",
+    cascade = CascadeType.ALL,
+    orphanRemoval = true
+  )
+  private List<ChuyenBay> chuyenbay = new ArrayList<ChuyenBay>();
+
+  public MayBay() {
+  }
+
+  public MayBay(int maMB, String loai, int tamBay) {
+    this.maMB = maMB;
+    this.loai = loai;
+    this.tamBay = tamBay;
+  }
+
+  public int getMaMB() {
+    return maMB;
+  }
+
+  public void setMaMB(int maMB) {
+    this.maMB = maMB;
+  }
+
+  public String getLoai() {
+    return loai;
+  }
+
+  public void setLoai(String loai) {
+    this.loai = loai;
+  }
+
+  public int getTamBay() {
+    return tamBay;
+  }
+
+  public void setTamBay(int tamBay) {
+    this.tamBay = tamBay;
+  }
+
+  @Override
+  public String toString() {
+    return "MayBay [loai=" + loai + ", maMB=" + maMB + ", tamBay=" + tamBay + "]";
+  }
+
+}
