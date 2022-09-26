@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kttk.lab5.hangkhong.entities.ChuyenBay;
-import com.kttk.lab5.hangkhong.entities.MayBay;
-import com.kttk.lab5.hangkhong.entities.NhanVien;
-import com.kttk.lab5.repository.ChuyenBayRepository;
+import com.kttk.lab5.hangkhong.repository.ChuyenBayRepository;
 
 @Service
 public class ChuyenBayServiceImpl implements ChuyenBayService {
   @Autowired
-  private ChuyenBayRepository chuyenBayRepository;
+  ChuyenBayRepository chuyenBayRepository;
 
   @Override
   public List<ChuyenBay> findByGaDi(String gaDi) {
@@ -30,7 +28,7 @@ public class ChuyenBayServiceImpl implements ChuyenBayService {
   @Override
   public List<ChuyenBay> findByDoDai(int doDai, String operator) {
     List<ChuyenBay> chuyenBays = chuyenBayRepository.findByDoDai(doDai, operator);
-    return null;
+    return chuyenBays;
   }
 
   @Override

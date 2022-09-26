@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kttk.lab5.hangkhong.entities.MayBay;
-import com.kttk.lab5.repository.MayBayRepository;
+import com.kttk.lab5.hangkhong.repository.MayBayRepository;
 
 @Service
 public class MayBayServiceImpl implements MayBayService {

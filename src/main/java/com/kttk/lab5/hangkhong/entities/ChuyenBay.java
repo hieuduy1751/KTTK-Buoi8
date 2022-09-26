@@ -31,11 +31,6 @@ public class ChuyenBay {
   @Column(name="ChiPhi")
   private int chiPhi;
 
-  @ManyToOne(
-    fetch = FetchType.LAZY
-  )
-  private MayBay maybay;
-
   public ChuyenBay() {
   }
 

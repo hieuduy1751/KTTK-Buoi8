@@ -19,12 +19,12 @@ public class NhanVien {
   private String tenNV;
 
   @Column(name = "Luong")
-  private int luong;
+  private Long luong;
 
   public NhanVien() {
   }
 
-  public NhanVien(String maNV, String tenNV, int luong) {
+  public NhanVien(String maNV, String tenNV, Long luong) {
     this.maNV = maNV;
     this.tenNV = tenNV;
     this.luong = luong;
@@ -46,11 +46,11 @@ public class NhanVien {
     this.tenNV = tenNV;
   }
 
-  public int getLuong() {
+  public Long getLuong() {
     return luong;
   }
 
-  public void setLuong(int luong) {
+  public void setLuong(Long luong) {
     this.luong = luong;
   }
 

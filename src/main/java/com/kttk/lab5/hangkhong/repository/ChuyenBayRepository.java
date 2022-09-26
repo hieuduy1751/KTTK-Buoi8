@@ -1,4 +1,4 @@
-package com.kttk.lab5.repository;
+package com.kttk.lab5.hangkhong.repository;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
 
   List<ChuyenBay> findByGaDen(String gaDi);
 
-  @Query("select c from chuyenbay c where c.DoDai ?2 ?1")
+  @Query(value = "select * from chuyenbay c where c.doDai ?2 ?1", nativeQuery = true)
   List<ChuyenBay> findByDoDai(int doDai, String operator);
 
-  @Query("select c from chuyenbay c where c.GaDi = ?1 and c.GaDen = ?2")
+  @Query(value = "select * from chuyenbay c where c.gaDi = ?1 and c.gaDen = ?2", nativeQuery = true)
   List<ChuyenBay> findByGaDiGaDen(String gaDi, String gaDen);
 
 }

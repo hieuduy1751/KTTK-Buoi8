@@ -7,7 +7,7 @@ import com.kttk.lab5.hangkhong.entities.NhanVien;
 public interface NhanVienService {
   Long calculateTongLuong();
 
-  List<NhanVien> findByLuong(int luong, String operator);
+  List<NhanVien> findByLuong(Long luong, String operator);
 
   List<NhanVien> findByLoaiMayBay(String loai);
 

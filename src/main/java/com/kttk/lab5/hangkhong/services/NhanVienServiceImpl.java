@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kttk.lab5.hangkhong.entities.NhanVien;
-import com.kttk.lab5.repository.NhanVienRepository;
+import com.kttk.lab5.hangkhong.repository.NhanVienRepository;
 
 @Service
 public class NhanVienServiceImpl implements NhanVienService {
@@ -15,12 +15,11 @@ public class NhanVienServiceImpl implements NhanVienService {
 
   @Override
   public Long calculateTongLuong() {
-    // TODO Auto-generated method stub
-    return null;
+    return nhanVienRepository.calculateTongLuong();
   }
 
   @Override
-  public List<NhanVien> findByLuong(int luong, String operator) {
+  public List<NhanVien> findByLuong(Long luong, String operator) {
     List<NhanVien> nhanViens = nhanVienRepository.findByLuong(luong, operator);
     return nhanViens;
   }

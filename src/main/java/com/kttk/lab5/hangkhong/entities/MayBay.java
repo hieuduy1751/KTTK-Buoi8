@@ -25,13 +25,6 @@ public class MayBay {
   @Column(name = "TamBay")
   private int tamBay;
 
-  @OneToMany(
-    mappedBy = "maybay",
-    cascade = CascadeType.ALL,
-    orphanRemoval = true
-  )
-  private List<ChuyenBay> chuyenbay = new ArrayList<ChuyenBay>();
-
   public MayBay() {
   }
 
