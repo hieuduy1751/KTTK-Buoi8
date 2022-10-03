@@ -4,11 +4,9 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,19 +14,19 @@ import javax.persistence.Table;
 public class ChuyenBay {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name="MaCB", nullable = false, unique = true, length = 5)
+  @Column(name = "MaCB", nullable = false, unique = true, length = 5)
   private String maCB;
-  @Column(name="GaDi", length = 50)
+  @Column(name = "GaDi", length = 50)
   private String gaDi;
-  @Column(name="GaDen", length = 50)
+  @Column(name = "GaDen", length = 50)
   private String gaDen;
-  @Column(name="DoDai")
+  @Column(name = "DoDai")
   private int doDai;
-  @Column(name="GioDi")
+  @Column(name = "GioDi")
   private Date gioDi;
-  @Column(name="GioDen")
+  @Column(name = "GioDen")
   private Date gioDen;
-  @Column(name="ChiPhi")
+  @Column(name = "ChiPhi")
   private int chiPhi;
 
   public ChuyenBay() {

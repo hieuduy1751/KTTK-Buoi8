@@ -17,9 +17,9 @@ public class MayBayController {
   @Autowired
   MayBayService mayBayService;
 
-  @GetMapping("/tam-bay/{operator}/{tamBay}")
-  public List<MayBay> getMayBayByTamBay(@PathVariable(name = "operator") String operator, @PathVariable(name = "tamBay") int tamBay) {
-    return mayBayService.findByTamBay(tamBay, operator);
+  @GetMapping("/tam-bay/lon-hon/{tamBay}")
+  public List<MayBay> getMayBayByTamBayLonHon(@PathVariable(name = "tamBay") int tamBay) {
+    return mayBayService.findByTamBayLonHon(tamBay);
   }
 
   @GetMapping("/loai/{loai}")
@@ -27,4 +27,13 @@ public class MayBayController {
     return mayBayService.findByLoai(loai);
   }
 
+  @GetMapping("/ho-nhan-vien/{hoNhanVien}")
+  public List<MayBay> getMayBayByHoNhanVien(@PathVariable(name = "hoNhanVien") String hoNhanVien) {
+    return mayBayService.findByHoNhanVien(hoNhanVien);
+  }
+
+  @GetMapping("/ma-cb/{maCB}")
+  public List<MayBay> getMayBayByMaCB(@PathVariable(name = "maCB") String maCB) {
+    return mayBayService.findByMaCB(maCB);
+  }
 }

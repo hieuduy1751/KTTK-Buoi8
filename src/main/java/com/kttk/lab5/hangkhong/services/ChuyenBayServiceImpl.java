@@ -26,8 +26,8 @@ public class ChuyenBayServiceImpl implements ChuyenBayService {
   }
 
   @Override
-  public List<ChuyenBay> findByDoDai(int doDai, String operator) {
-    List<ChuyenBay> chuyenBays = chuyenBayRepository.findByDoDai(doDai, operator);
+  public List<ChuyenBay> findByDoDai(int lonHon, int nhoHon) {
+    List<ChuyenBay> chuyenBays = chuyenBayRepository.findByDoDai(lonHon, nhoHon);
     return chuyenBays;
   }
 
@@ -37,5 +37,4 @@ public class ChuyenBayServiceImpl implements ChuyenBayService {
     return chuyenBays;
   }
 
-    
 }

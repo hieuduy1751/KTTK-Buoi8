@@ -14,8 +14,8 @@ public class MayBayServiceImpl implements MayBayService {
   MayBayRepository mayBayRepository;
 
   @Override
-  public List<MayBay> findByTamBay(int tamBay, String operator) {
-    List<MayBay> mayBays = mayBayRepository.findByTamBay(tamBay, operator);
+  public List<MayBay> findByTamBayLonHon(int tamBay) {
+    List<MayBay> mayBays = mayBayRepository.findByTamBayLonHon(tamBay);
     return mayBays;
   }
 
@@ -24,5 +24,14 @@ public class MayBayServiceImpl implements MayBayService {
     List<MayBay> mayBays = mayBayRepository.findByLoai(loai);
     return mayBays;
   }
-  
+
+  @Override
+  public List<MayBay> findByHoNhanVien(String hoNhanVien) {
+    return mayBayRepository.findByHoNhanVien(hoNhanVien);
+  }
+
+  @Override
+  public List<MayBay> findByMaCB(String maCB) {
+    return mayBayRepository.findByMaCB(maCB);
+  }
 }

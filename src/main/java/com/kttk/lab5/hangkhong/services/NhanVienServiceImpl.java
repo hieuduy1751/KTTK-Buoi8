@@ -19,8 +19,8 @@ public class NhanVienServiceImpl implements NhanVienService {
   }
 
   @Override
-  public List<NhanVien> findByLuong(Long luong, String operator) {
-    List<NhanVien> nhanViens = nhanVienRepository.findByLuong(luong, operator);
+  public List<NhanVien> findByLuongNhoHon(Long luong) {
+    List<NhanVien> nhanViens = nhanVienRepository.findByLuongNhoHon(luong);
     return nhanViens;
   }
 
@@ -35,5 +35,10 @@ public class NhanVienServiceImpl implements NhanVienService {
     List<NhanVien> nhanViens = nhanVienRepository.findByMaMayBay(maMayBay);
     return nhanViens;
   }
-  
+
+  @Override
+  public List<NhanVien> findByLoaiMayBays(String loai1, String loai2) {
+    return nhanVienRepository.findByLoaiMayBays(loai1, loai2);
+  }
+
 }

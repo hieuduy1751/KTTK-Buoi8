@@ -14,8 +14,8 @@ public interface ChuyenBayRepository extends JpaRepository<ChuyenBay, String> {
 
   List<ChuyenBay> findByGaDen(String gaDi);
 
-  @Query(value = "select * from chuyenbay c where c.doDai ?2 ?1", nativeQuery = true)
-  List<ChuyenBay> findByDoDai(int doDai, String operator);
+  @Query(value = "select * from chuyenbay c where c.doDai >= ?1 and c.doDai <= ?2", nativeQuery = true)
+  List<ChuyenBay> findByDoDai(int lonHon, int nhoHon);
 
   @Query(value = "select * from chuyenbay c where c.gaDi = ?1 and c.gaDen = ?2", nativeQuery = true)
   List<ChuyenBay> findByGaDiGaDen(String gaDi, String gaDen);

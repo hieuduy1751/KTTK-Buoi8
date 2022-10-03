@@ -27,14 +27,16 @@ public class ChuyenBayController {
     return chuyenBayService.findByGaDen(gaDen);
   }
 
-  @GetMapping("/do-dai/{operator}/{doDai}")
-  public List<ChuyenBay> getChuyenBayByDoDai(@PathVariable(name = "operator") String operator, @PathVariable(name = "doDai") int doDai) {
-    return chuyenBayService.findByDoDai(doDai, operator);
+  @GetMapping("/do-dai/{lonHon}/{nhoHon}")
+  public List<ChuyenBay> getChuyenBayByDoDai(@PathVariable(name = "lonHon") int lonHon,
+      @PathVariable(name = "nhoHon") int nhoHon) {
+    return chuyenBayService.findByDoDai(lonHon, nhoHon);
   }
 
-  @GetMapping("/{gaDi}/{gaDen}")
-  public List<ChuyenBay> getChuyenBayByGaDiGaDen(@PathVariable(name = "gaDi") String gaDi, @PathVariable(name = "gaDen") String gaDen) {
-    return chuyenBayService.findByGaDiGaDen((gaDi), gaDen);
+  @GetMapping("/ga/{gaDi}/{gaDen}")
+  public List<ChuyenBay> getChuyenBayByGaDiGaDen(@PathVariable(name = "gaDi") String gaDi,
+      @PathVariable(name = "gaDen") String gaDen) {
+    return chuyenBayService.findByGaDiGaDen(gaDi, gaDen);
   }
 
 }
