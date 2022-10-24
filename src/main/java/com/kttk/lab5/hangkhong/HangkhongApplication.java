@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@EnableCircuitBreaker
+@EnableRetry
 public class HangkhongApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(HangkhongApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(HangkhongApplication.class, args);
+  }
 
 }
