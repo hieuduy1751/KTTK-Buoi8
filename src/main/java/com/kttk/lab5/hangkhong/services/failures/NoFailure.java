@@ -1,4 +1,4 @@
-package io.reflectoring.resilience4j.circuitbreaker.services.failures;
+package com.kttk.lab5.hangkhong.services.failures;
 
 public class NoFailure implements PotentialFailure {
     @Override

@@ -1,6 +1,4 @@
-package io.reflectoring.resilience4j.circuitbreaker.services.failures;
-
-import io.reflectoring.resilience4j.circuitbreaker.exceptions.FlightServiceException;
+package com.kttk.lab5.hangkhong.services.failures;
 
 public class SucceedNTimesAndThenFail implements PotentialFailure {
 
@@ -17,6 +15,7 @@ public class SucceedNTimesAndThenFail implements PotentialFailure {
       successCount++;
       return;
     }
-    throw new FlightServiceException("Error occurred during flight search");
+    // throw new FlightServiceException("Error occurred during flight search");
+    throw new Error("Error occurred during flight search");
   }
 }

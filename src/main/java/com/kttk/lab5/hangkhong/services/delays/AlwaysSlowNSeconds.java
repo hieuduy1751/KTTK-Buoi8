@@ -1,4 +1,4 @@
-package io.reflectoring.resilience4j.circuitbreaker.services.delays;
+package com.kttk.lab5.hangkhong.services.delays;
 
 public class AlwaysSlowNSeconds implements PotentialDelay {
   int delayInSeconds;
